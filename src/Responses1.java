@@ -128,19 +128,19 @@ public class Responses1 {
 			}
 			else if (whichResponse == 1)
 			{
-				response = "Hmmm.";
+				response = "Hmmm. Cool cool";
 			}
 			else if (whichResponse == 2)
 			{
-				response = "Do you really think so?";
+				response = "Mhm sure b";
 			}
 			else if (whichResponse == 3)
 			{
-				response = "You don't say.";
+				response = "So?";
 			}
 			else if (whichResponse == 4)
 			{
-				response = "Okay now please go away.";
+				response = "That's cool";
 			}
 			else if (whichResponse == 5)
 			{
