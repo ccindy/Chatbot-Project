@@ -21,7 +21,7 @@ public class Responses1 {
 			}
 			else if (whichGreeting == 2)
 			{
-				greeting = "aye gurl u tryna smash?";
+				greeting = "aye gurl u tryna hook up?";
 			}
 			return greeting;
 		}
@@ -148,7 +148,7 @@ public class Responses1 {
 			}
 			else if (whichResponse == 6)
 			{
-				response = "I'm always hungry.";
+				response = "WOwOwoOWowoOW";
 			}
 			else if (whichResponse == 7)
 			{
@@ -158,4 +158,4 @@ public class Responses1 {
 			return response;
 		}
 	}
-}
+
