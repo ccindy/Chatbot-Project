@@ -1,5 +1,5 @@
 
-public class Responses1 {
+public class doucheBot {
 		/**
 		 * Get a randomized greeting 	
 		 * @return a greeting
