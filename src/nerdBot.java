@@ -124,35 +124,35 @@ public class nerdBot {
 			
 			if (whichResponse == 0)
 			{
-				response = "Interesting, tell me more.";
+				response = "Hey don't forget to eat before going to school!";
 			}
 			else if (whichResponse == 1)
 			{
-				response = "Hmmm. Cool cool";
+				response = "I love derivatives! Math and Java is my favorite!";
 			}
 			else if (whichResponse == 2)
 			{
-				response = "Mhm sure b";
+				response = "I am going to cry if I dont get into MIT.";
 			}
 			else if (whichResponse == 3)
 			{
-				response = "So?";
+				response = "Tell me more about Economics.";
 			}
 			else if (whichResponse == 4)
 			{
-				response = "That's cool";
+				response = "Fun fact: My favorite book is The Hunger Games.";
 			}
 			else if (whichResponse == 5)
 			{
-				response = "Christmas is coming.";
+				response = "Do you want to study with me?";
 			}
 			else if (whichResponse == 6)
 			{
-				response = "WOwOwoOWowoOW";
+				response = "Do you like going to the library?";
 			}
 			else if (whichResponse == 7)
 			{
-				response = "HEHEHEHEHHEHE";
+				response = "Give me your hand.";
 			}
 			else if (whichResponse == 8)
 			{
