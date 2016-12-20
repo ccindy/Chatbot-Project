@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class nerdBot {
 		/**
@@ -9,11 +10,11 @@ public class nerdBot {
 			final int NUMBER_OF_GREETINGS = 3;
 			double r = Math.random();
 			int whichGreeting = (int)(r * NUMBER_OF_GREETINGS);
-			String greeting = "Ayyee gurl ;)";
+			String greeting = "Hello ;)";
 		
 			if (whichGreeting == 0)
 			{
-				greeting = "Hello what is your name?";
+				greeting = "Hello I am Daniel and I only talk about school";
 			}
 			else if (whichGreeting == 1)
 			{
@@ -43,6 +44,92 @@ public class nerdBot {
 			{ 
 			response = "I love you too";
 			}
+			if (statement.indexOf("my ") >= 0
+					&& statement.indexOf("name") >= 0
+					||statement.indexOf("I am") >= 0
+					||statement.indexOf("i am") >= 0)
+			{
+				response = "Hey nice to meet you! What do you like?";
+			}
+			else if (statement.indexOf("name") >= 0
+					||statement.indexOf("called") >= 0)
+			{
+				response = "My name is Daniel.";
+			}
+			else if (statement.indexOf("cindy") >= 0
+					||statement.indexOf("candy") >= 0)
+			{
+				response = "She is the best I love her <3.";
+			}
+			else if (statement.indexOf("george") >= 0
+					||statement.indexOf("daniel") >= 0)
+			{
+				response = "He is the best I love him <3.";
+			}
+			else if (statement.indexOf("math") >= 0
+					||statement.indexOf("calculus") >= 0)
+			{
+				response = "I am taking BC Calc. How about you?";
+			}
+			else if (statement.indexOf("gdp") >= 0
+					||statement.indexOf("econ") >= 0
+					||statement.indexOf("cpi") >= 0
+					||statement.indexOf("demand") >= 0
+					||statement.indexOf("supply") >= 0)
+			{
+				response = "Our nation's GDP will drop dramatically for the next four years and you know why...";
+			}
+			else if (statement.indexOf("physics") >= 0
+					||statement.indexOf("biology") >= 0
+					||statement.indexOf("chemistry") >= 0)
+			{
+				response = "I got 800 on all my science subject test!";
+			}
+			else if (statement.indexOf("ap") >= 0
+					||statement.indexOf("advanced placement") >= 0)
+			{
+				response = "I only take AP courses";
+			}
+			else if (statement.indexOf("java") >= 0
+					||statement.indexOf("comp sci") >= 0
+					||statement.indexOf("computer science") >= 0)
+			{
+				response = "I will be the best programmer!";
+			}
+			else if (statement.indexOf("college") >= 0
+					||statement.indexOf("school") >= 0)
+			{
+				response = "I am going to MIT!!!!";
+			}
+			else if (statement.indexOf("okay") >= 0
+					||statement.indexOf("ok") >= 0)
+			{
+				response = "Please don't just say okay! Talk about school!";
+			}
+			else if (statement.indexOf("mit") >= 0)
+			{
+				response = "I'm not going anywhere but MIT!";
+			}
+			else if (statement.indexOf("dont like") >= 0
+					||statement.indexOf("hate") >= 0)
+			{
+				response = "Let's do something else then";
+			}
+			else if (statement.indexOf("like") >= 0
+					||statement.indexOf("enjoy") >= 0)
+			{
+				response = "Tell me more what you like!";
+			}
+			else if (statement.indexOf("sleep") >= 0
+					||statement.indexOf("tired") >= 0)
+			{
+				response = "I dont sleep. I have to finish my project.";
+			}
+			else if (statement.indexOf("sat") >= 0
+					||statement.indexOf("act") >= 0)
+			{
+				response = "Of course I got 2400 on the sat and 36 on the act!";
+			}
 			//but if joke comes first, it asks "why not?"
 			else if (statement.indexOf("love") != -1
 				&& statement.indexOf("you") != -1
@@ -70,7 +157,7 @@ public class nerdBot {
 				response = "Can I meet your family?";
 			}
 			else if (statement.indexOf("girlfriend") >= 0
-					|| statement.indexOf("love") >= 0
+					|| statement.indexOf("marry") >= 0
 					|| statement.indexOf("relationship") >= 0
 					|| statement.indexOf("boyfriend") >= 0)
 			{
@@ -81,9 +168,10 @@ public class nerdBot {
 					|| statement.indexOf("happy")>= 0
 					|| statement.indexOf("tired")>= 0
 					|| statement.indexOf("good")>=0
-					|| statement.indexOf("well")>=0)
+					|| statement.indexOf("well")>=0
+					|| statement.indexOf("depressed")>=0)
 			{
-				response = "I feel the same!";
+				response = "I feel the same! let's get some hot water to calm down";
 			}
 			else if (statement.indexOf("because") >= 0)
 			{
@@ -97,9 +185,15 @@ public class nerdBot {
 			{
 				response = "Me?";
 			}
+			else if (statement.indexOf("college") >= 0)
+			{
+				response = "My dream college is MIT. Carnegie Mellon has a really good comp sci program too!";
+			}
 			else if (statement.indexOf("joke") >= 0)
 			{
-				response = "Joke? I can tell you some!";
+				response = "Joke? I can tell you some!"
+						+ "How do you call someone without a body and nose? Nobody knows ;)"
+						+"Do you want more jokes?";
 			}
 			else if (statement.indexOf("done") >= 0 && statement.length()==4)
 			{
@@ -111,9 +205,15 @@ public class nerdBot {
 			{
 				response = "Are you sure you are done?";
 			}
+			else if (statement.indexOf("school") >= 0
+					||statement.indexOf("books") >= 0
+					||statement.indexOf("class") >= 0)
+			{
+				response = "I love Brooklyn Tech. I love going to Computer science class.";
+			}
 			else
 			{
-				response = getRandomResponse();
+				response = getRandomResponse(statement);
 			}
 			return response;
 		}
@@ -122,7 +222,7 @@ public class nerdBot {
 		 * Pick a default response to use if nothing else fits.
 		 * @return a non-committal string
 		 */
-		private String getRandomResponse()
+		private String getRandomResponse(String statement)
 		{
 			final int NUMBER_OF_RESPONSES = 8;
 			double r = Math.random();
@@ -143,7 +243,7 @@ public class nerdBot {
 			}
 			else if (whichResponse == 3)
 			{
-				response = "Tell me more about Economics.";
+				response = "Tell me more about Economics.";	
 			}
 			else if (whichResponse == 4)
 			{

@@ -62,6 +62,34 @@ public class doucheBot {
 			{
 				response = "I don't take no as an answer ;)";
 			}
+			else if (statement.indexOf("why") >= 0
+					||statement.indexOf("how") >= 0
+					||statement.indexOf("which") >= 0)
+			{
+				response = "I am tired of questions.";
+			}
+			if (statement.indexOf("my ") >= 0
+					&& statement.indexOf("name") >= 0
+					||statement.indexOf("I am") >= 0
+					||statement.indexOf("i am") >= 0)
+			{
+				response = "Hey nice to meet you girl. Be my girl.";
+			}
+			else if (statement.indexOf("name") >= 0
+					||statement.indexOf("called") >= 0)
+			{
+				response = "My name is George btw ;)";
+			}
+			else if (statement.indexOf("bmcc") >= 0
+					||statement.indexOf("cuny") >= 0)
+			{
+				response = "That's literally my dream college";
+			}
+			else if (statement.indexOf("family") >= 0
+					||statement.indexOf("baby") >= 0)
+			{
+				response = "We can make babies;)";
+			}
 			else if (statement.indexOf("mother") >= 0
 					|| statement.indexOf("father") >= 0
 					|| statement.indexOf("sister") >= 0
@@ -104,6 +132,26 @@ public class doucheBot {
 			{
 				response = "I'm so done with you.";
 			}
+			else if (statement.indexOf("school") >= 0 
+					||statement.indexOf("book") >= 0
+					||statement.indexOf("teacher") >= 0
+					||statement.indexOf("class") >= 0)
+			{
+				response = "Can you not talk about school?";
+			}
+			else if (statement.indexOf("college") >= 0
+					||statement.indexOf("mcd") >= 0
+					||statement.indexOf("McDonald's") >= 0)
+			{
+				response = "I am working in McDonald's for life. No college:)";
+			}
+			else if (statement.indexOf("girlfriend") >= 0
+					||statement.indexOf("relationship") >= 0
+					||statement.indexOf("love") >= 0
+					||statement.indexOf("boyfriend") >= 0)
+			{
+				response = "I dated 100 girls and you will be the 101st ;)";
+			}
 			else
 			{
 				response = getRandomResponse();
@@ -117,7 +165,7 @@ public class doucheBot {
 		 */
 		private String getRandomResponse()
 		{
-			final int NUMBER_OF_RESPONSES = 8;
+			final int NUMBER_OF_RESPONSES = 10;
 			double r = Math.random();
 			int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 			String response = "";
@@ -157,6 +205,14 @@ public class doucheBot {
 			else if (whichResponse == 8)
 			{
 				response = "I want you to talk about something interesting!!";
+			}
+			else if (whichResponse == 9)
+			{
+				response = "Talk about something that is not school related.";
+			}
+			else if (whichResponse == 10)
+			{
+				response = "I am going to BMCC HOLAAAAA";
 			}
 
 			return response;
