@@ -3,7 +3,7 @@ public class ChatbotRunner
 {
 	public static void main(String[] args)
 	{
-		Responses1 jerky = new Responses1();
+		doucheBot jerky = new doucheBot();
 		
 		System.out.println (jerky.getGreeting());
 		Scanner in = new Scanner (System.in);
