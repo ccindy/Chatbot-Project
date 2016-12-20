@@ -69,6 +69,13 @@ public class nerdBot {
 			{
 				response = "Can I meet your family?";
 			}
+			else if (statement.indexOf("girlfriend") >= 0
+					|| statement.indexOf("love") >= 0
+					|| statement.indexOf("relationship") >= 0
+					|| statement.indexOf("boyfriend") >= 0)
+			{
+				response = "Marry me. <3 <3 <3";
+			}
 			else if (statement.indexOf("sad") >= 0
 					|| statement.indexOf("stressed") >= 0
 					|| statement.indexOf("happy")>= 0
@@ -96,13 +103,13 @@ public class nerdBot {
 			}
 			else if (statement.indexOf("done") >= 0 && statement.length()==4)
 			{
-				response = "I'm so done with you.";
+				response = "I'm not done with you yet.";
 			}
 			else if (statement.indexOf(" done") >= 0 
 					||statement.indexOf(" done ") >= 0
 					||statement.indexOf("done ") >= 0)
 			{
-				response = "I'm so done with you.";
+				response = "Are you sure you are done?";
 			}
 			else
 			{
