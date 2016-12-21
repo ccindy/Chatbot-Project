@@ -20,15 +20,14 @@ public class NeuralChatBot {
     public final String IDS_FILE = "line_ids.txt";         // Path to .txt containing the corresponding ID for all sequences (movie dialogue)
     public final String INPUT_SEQ_FILE = "input_seq.txt";  // Path to .txt containing the ID for each input example for training
     public final String OUTPUT_SEQ_FILE = "labels.txt";    // Path to .txt containing the ID for the corresponding labeled output for each input example (labeled training output)
-    public final int MAX_SEQ_LEN = 50;                     // Maximum sequence length to train the model on
 
     private Logger log = Logger.getLogger(NeuralChatBot.class.getName());
 
     public NeuralChatBot() throws java.io.FileNotFoundException{
         populateHashMap(IDS_FILE, LINES_FILE);
-        CustomSequenceIterator sequenceIterator = new CustomSequenceIterator(seq_hm, INPUT_SEQ_FILE, OUTPUT_SEQ_FILE, MAX_SEQ_LEN,
+        CustomSequenceIterator sequenceIterator = new CustomSequenceIterator(seq_hm, INPUT_SEQ_FILE, OUTPUT_SEQ_FILE,
                                                                              createWord2VecEmbeddings(LINES_FILE));
-        sequenceIterator.next(2);
+        sequenceIterator.next(1);
     }
 
     /**
@@ -80,7 +79,7 @@ public class NeuralChatBot {
                     .learningRate(.025)
                     .minWordFrequency(1) // need an embedding for each word in our corpus
                     .iterations(5)
-                    .layerSize(100)
+                    .layerSize(3)
                     .seed(42)
                     .windowSize(5)
                     .iterate(iter)
