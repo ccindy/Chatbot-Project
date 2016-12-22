@@ -3,6 +3,7 @@ public class ChatbotRunner
 {
 	public static void main(String[] args)
 	{
+		System.out.println("// A bot personality is randomly chosen, rerun the program for a new personality.");
 		int randomBot=3;
 		double r = Math.random();
 		int number = (int)(r * randomBot);

@@ -18,7 +18,10 @@ public class WisdomBot {
         {{"hate", "love"}, {"It is easy to hate and it is difficult to love. This is how the whole scheme of things works." +
                 " All good things are difficult to achieve; and bad things are very easy to get."}},
         {{"yes", "okay"}, {"Too much agreement kills the chat."}},
-        {{"good", "bad", "horrible", "great"}, {"The good life is one inspired by love and guided by knowledge."}}
+        {{"good", "bad", "horrible", "great"}, {"The good life is one inspired by love and guided by knowledge."}},
+        {{"what"},{"what?"}},
+        {{"dont know"}, {"Me neither and I am wise"}},
+        {{"why?", "why"}, {"Why does anything exist? What is the meaning of it all?"}}
     };
     private String[] randomResponses = {
             "The good life is one inspired by love and guided by knowledge.",
