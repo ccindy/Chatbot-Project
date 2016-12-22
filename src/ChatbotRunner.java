@@ -26,11 +26,17 @@ public class ChatbotRunner
 			System.out.println (nerd.getGreeting());
 			Scanner in = new Scanner (System.in);
 			String statement = in.nextLine();
+			int numofrespond = 0;
 			
 			while (!statement.equals("Bye"))
 			{
 				System.out.println (nerd.getResponse(statement));
 				statement = in.nextLine();
+				numofrespond++;
+				while(numofrespond>10)
+				{
+				
+				}
 			}
 			}
 		}
