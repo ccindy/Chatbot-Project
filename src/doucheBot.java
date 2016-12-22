@@ -17,7 +17,7 @@ public class doucheBot {
 			}
 			else if (whichGreeting == 1)
 			{
-				greeting = "Hey you tryna holla at me";
+				greeting = "Hey you tryna holla at me?";
 			}
 			else if (whichGreeting == 2)
 			{
