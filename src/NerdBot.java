@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class nerdBot {
+public class NerdBot {
 		/**
 		 * Get a randomized greeting 	
 		 * @return a greeting
