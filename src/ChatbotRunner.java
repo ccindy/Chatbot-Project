@@ -3,7 +3,7 @@ public class ChatbotRunner
 {
 	public static void main(String[] args)
 	{
-		int randomBot=2;
+		int randomBot=3;
 		double r = Math.random();
 		int number = (int)(r * randomBot);
 		String response = "";
@@ -20,11 +20,11 @@ public class ChatbotRunner
 			statement = in.nextLine();
 		}
 		}
-		else
+		else if(number == 2)
 		{
 			while(true)
 			{
-				nerdBot nerd = new nerdBot();
+				NerdBot nerd = new NerdBot();
 				System.out.println (nerd.getGreeting());
 				Scanner in = new Scanner (System.in);
 				String statement = in.nextLine();
@@ -52,5 +52,9 @@ public class ChatbotRunner
 			}
 			}
 		}
+		else{
+			WisdomBot wisdomBot = new WisdomBot();
+			wisdomBot.startBot();
+		}
 	}
-	}
+}
