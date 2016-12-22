@@ -26,16 +26,30 @@ public class ChatbotRunner
 			System.out.println (nerd.getGreeting());
 			Scanner in = new Scanner (System.in);
 			String statement = in.nextLine();
-			int numofrespond = 0;
+			int numofresponse = 0;
 			
 			while (!statement.equals("Bye"))
 			{
 				System.out.println (nerd.getResponse(statement));
 				statement = in.nextLine();
-				numofrespond++;
-				while(numofrespond>10)
+				numofresponse++;
+				int count=0;
+				while(numofresponse>10 && count<1)
 				{
-				
+				physicsGame game = new physicsGame();
+				System.out.println (game.getGreeting());
+				Scanner question = new Scanner(System.in);
+				String say = question.nextLine();
+				while(!statement.equals("no"))
+				{
+				System.out.println (game.getAnswer(say));
+				say = question.nextLine();
+				}
+				if(statement.equals("no"))
+				{
+				System.out.println (game.getAnswer(say));
+				count++;
+				}
 				}
 			}
 			}
