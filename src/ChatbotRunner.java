@@ -22,19 +22,21 @@ public class ChatbotRunner
 		}
 		else
 		{
-			nerdBot nerd = new nerdBot();
-			System.out.println (nerd.getGreeting());
-			Scanner in = new Scanner (System.in);
-			String statement = in.nextLine();
-			int numofresponse = 0;
+			while(true)
+			{
+				nerdBot nerd = new nerdBot();
+				System.out.println (nerd.getGreeting());
+				Scanner in = new Scanner (System.in);
+				String statement = in.nextLine();
+				int numofresponse = 0;
+				int count=0;
 			
 			while (!statement.equals("Bye"))
 			{
 				System.out.println (nerd.getResponse(statement));
 				statement = in.nextLine();
 				numofresponse++;
-				int count=0;
-				while(numofresponse>10 && count<1)
+				while(numofresponse>10 && count<1 || statement.equals("game"))
 				{
 				physicsGame game = new physicsGame();
 				System.out.println (game.getGreeting());
@@ -44,14 +46,11 @@ public class ChatbotRunner
 				{
 				System.out.println (game.getAnswer(say));
 				say = question.nextLine();
-				}
-				if(statement.equals("no"))
-				{
-				System.out.println (game.getAnswer(say));
 				count++;
 				}
 				}
 			}
 			}
 		}
+	}
 	}

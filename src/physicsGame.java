@@ -8,7 +8,7 @@ public class physicsGame {
 		String greeting="Hello";
 		if (whichGreeting == 0)
 		{
-			greeting = "I am getting bored.. Let's play a physics game! Answer yea or no";
+			greeting = "I am getting bored.. Let's play a physics game! Answer yes or no";
 		}
 		return greeting;
 	}
@@ -24,11 +24,52 @@ public class physicsGame {
 			{ 
 			response = "...okay then :(";
 			}
-			else if (statement.indexOf("acceleration") >= 0)
+			else if (statement.indexOf("gravity") >= 0)
 			{
 				response = "It is 9.81m/s^2";
 			}
+			else if (statement.indexOf("velocity") >= 0)
+			{
+				response = "It is the derivative, rate of change of displacement. The area of the acceleration graph = velocity"
+						+"vf = vi + at";
+			}
+			else if (statement.indexOf("acceleration") >= 0)
+			{
+				response = "The derivative of velocity a = v/t";
+				
+			}
+			else if (statement.indexOf("electricity") >= 0)
+			{
+				response = "There are positive and negative";
+			}
+			else if (statement.indexOf("magnet") >= 0)
+			{
+				response = "North and south";
+			}
+			else if (statement.indexOf("diaplacement") >= 0)
+			{
+				response = "Delta x and x final minus x initial";
+			}
+			else if (statement.indexOf("force") >= 0)
+			{
+				response = "Please specify what force you are taking about";
+			}
+			if (statement.indexOf("friction") >= 0)
+			{
+				response = "f = miu N . Force between rough surfaces.";
+			}
+			if (statement.indexOf("normal") >= 0)
+			{
+				response = "Opposite direction from Fg. It is for balancing out Fg.";
+			}
+			if (statement.indexOf("Fg") >= 0 ||
+					statement.indexOf("fg") >= 0 )
+			{
+				response = "Gravitational force. Fg=mg";
+			}
+
 			return response;
 	}
+
 
 }
