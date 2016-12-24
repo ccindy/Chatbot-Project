@@ -9,7 +9,7 @@ public class doucheBot {
 			final int NUMBER_OF_GREETINGS = 3;
 			double r = Math.random();
 			int whichGreeting = (int)(r * NUMBER_OF_GREETINGS);
-			String greeting = "Ayyee gurl ;)";
+			String greeting = "";
 		
 			if (whichGreeting == 0)
 			{
