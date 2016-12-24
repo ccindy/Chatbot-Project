@@ -179,9 +179,9 @@ public class DoucheBot implements ChatBot{
                 				 "Challenge a stranger to a duel.",
                 				 "Scream Twinkle Twinkle Little Stars out the window 😀",
                 				 "LICK THE WALL"};
-                	 double r = Math.random();
-                	 int index = (int)(r * dares.length);
-                	 return dares[index];
+                double r = Math.random();
+                int index = (int)(r * dares.length);
+                return dares[index];
             }
 			else
 			{
