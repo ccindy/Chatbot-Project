@@ -17,7 +17,6 @@ public class ChatbotRunner
 
 	public static void main(String[] args)
 	{
-        System.out.println("shit".contains("shit"));
         String response;
         Scanner scanner = new Scanner(System.in);
         System.out.println("// Enter \"new personality\" to get a chatbot with a different personality");
@@ -43,9 +42,7 @@ public class ChatbotRunner
      * @return A chatbot instance that implements the ChatBot interface
      */
 	private static ChatBot getRandomBot(){
-        ChatBot randBot = null;
         int rand = ThreadLocalRandom.current().nextInt(0, 3); // random int from 0 to 2 for the three bots
-
         // To avoid having the same bot returned consecutively
         while(lastRandBotInt == rand)
             rand = ThreadLocalRandom.current().nextInt(0, 3);
@@ -53,16 +50,12 @@ public class ChatbotRunner
 
         switch (rand){
             case 0:
-                randBot = new DoucheBot();
-                break;
+                return new DoucheBot();
             case 1:
-                randBot = new NerdBot();
-                break;
+                return new NerdBot();
             case 2:
-                randBot = new WisdomBot();
-                break;
+                return new WisdomBot();
         }
-
-        return randBot;
+        return null; // This statement will never be reached but is necessary to avoid "Error: missing return statement"
     }
 }
