@@ -1,6 +1,16 @@
-import java.util.Scanner;
+/*
+ * Magpie Project
+ * AP Computer Science
+ * Mr.Levin
+ * Daniel Roudnitsky, Cindy Wu, Candy Yuen
+ * Period 8
+ */
 
-public class NerdBot {
+/**
+ * A nerdy chatbot that responds with nerdy remarks
+ */
+
+public class NerdBot implements ChatBot{
 		/**
 		 * Get a randomized greeting 	
 		 * @return a greeting
@@ -14,15 +24,15 @@ public class NerdBot {
 		
 			if (whichGreeting == 0)
 			{
-				greeting = "Hello I am Daniel and I only talk about school";
+				greeting = "Hello I am Gary and I only talk about school. (If you want to play the physics game with me, say physics!)";
 			}
 			else if (whichGreeting == 1)
 			{
-				greeting = "Hello! My name is Daniel! I love Java!";
+				greeting = "Hello! My name is Gary! I love Java! (If you want to play the physics game with me, say physics!)";
 			}
 			else if (whichGreeting == 2)
 			{
-				greeting = "It's nice meeting you! How was your day?";
+				greeting = "It's nice meeting you! How was your day? (If you want to play the physics game with me, say physics!)";
 			}
 			return greeting;
 		}
@@ -54,14 +64,15 @@ public class NerdBot {
 			else if (statement.indexOf("name") >= 0
 					||statement.indexOf("called") >= 0)
 			{
-				response = "My name is Daniel.";
+				response = "My name is Gary.";
 			}
 			else if (statement.indexOf("cindy") >= 0
 					||statement.indexOf("candy") >= 0)
 			{
 				response = "She is the best I love her <3.";
 			}
-			else if (statement.indexOf("george") >= 0
+			else if (statement.indexOf("levin") >= 0
+			        ||statement.indexOf("george") >= 0
 					||statement.indexOf("daniel") >= 0)
 			{
 				response = "He is the best I love him <3.";
@@ -79,8 +90,7 @@ public class NerdBot {
 			{
 				response = "Our nation's GDP will drop dramatically for the next four years and you know why...";
 			}
-			else if (statement.indexOf("physics") >= 0
-					||statement.indexOf("biology") >= 0
+			else if (statement.indexOf("biology") >= 0
 					||statement.indexOf("chemistry") >= 0)
 			{
 				response = "I got 800 on all my science subject test!";
@@ -211,9 +221,14 @@ public class NerdBot {
 			{
 				response = "I love Brooklyn Tech. I love going to Computer science class.";
 			}
+			else if(statement.indexOf("physics") >=  0){
+                PhysicsGame game = new PhysicsGame();
+                game.startGame();
+                response = "Thanks for playing!";
+			}
 			else
-			{
-				response = getRandomResponse(statement);
+            {
+				response = getRandomResponse();
 			}
 			return response;
 		}
@@ -222,7 +237,7 @@ public class NerdBot {
 		 * Pick a default response to use if nothing else fits.
 		 * @return a non-committal string
 		 */
-		private String getRandomResponse(String statement)
+		public String getRandomResponse()
 		{
 			final int NUMBER_OF_RESPONSES = 8;
 			double r = Math.random();

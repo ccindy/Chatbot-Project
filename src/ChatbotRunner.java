@@ -1,61 +1,66 @@
+/*
+ * Magpie Project
+ * AP Computer Science
+ * Mr.Levin
+ * Daniel Roudnitsky, Cindy Wu, Candy Yuen
+ * Period 8
+ */
+
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class ChatbotRunner
 {
+    /* Last random number generated for picking a bot personality
+     -1 "filler" value so that we know that we haven't created a randBot yet */
+    private static int lastRandBotInt = -1;
+
 	public static void main(String[] args)
 	{
-		System.out.println("// A bot personality is randomly chosen, rerun the program for a new personality.");
-		int randomBot=3;
-		double r = Math.random();
-		int number = (int)(r * randomBot);
-		String response = "";
-		if(number==1)
-		{
-		doucheBot jerky = new doucheBot();
-		System.out.println (jerky.getGreeting());
-		Scanner in = new Scanner (System.in);
-		String statement = in.nextLine();
-		
-		while (!statement.equals("Bye"))
-		{
-			System.out.println (jerky.getResponse(statement));
-			statement = in.nextLine();
-		}
-		}
-		else if(number == 2)
-		{
-			while(true)
-			{
-				NerdBot nerd = new NerdBot();
-				System.out.println (nerd.getGreeting());
-				Scanner in = new Scanner (System.in);
-				String statement = in.nextLine();
-				int numofresponse = 0;
-				int count=0;
-			
-			while (!statement.equals("Bye"))
-			{
-				System.out.println (nerd.getResponse(statement));
-				statement = in.nextLine();
-				numofresponse++;
-				while(numofresponse>10 && count<1 || statement.equals("game"))
-				{
-				physicsGame game = new physicsGame();
-				System.out.println (game.getGreeting());
-				Scanner question = new Scanner(System.in);
-				String say = question.nextLine();
-				while(!statement.equals("no"))
-				{
-				System.out.println (game.getAnswer(say));
-				say = question.nextLine();
-				count++;
-				}
-				}
-			}
-			}
-		}
-		else{
-			WisdomBot wisdomBot = new WisdomBot();
-			wisdomBot.startBot();
-		}
+        System.out.println("shit".contains("shit"));
+        String response;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("// Enter \"new personality\" to get a chatbot with a different personality");
+
+        ChatBot randBot = getRandomBot();
+        System.out.println(randBot.getGreeting());
+
+        while(!(response = scanner.nextLine().toLowerCase()).contains("bye")){ // Get response and exit loop if it == "bye"
+            if(response.contains("new personality")){
+                randBot = getRandomBot();
+                System.out.println(randBot.getGreeting());
+            }
+            else{
+                System.out.println(randBot.getResponse(response));
+            }
+        }
 	}
+
+    /**
+     * Method to create a new chat bot based on a random number, doesn't allow for the same type of bot to
+     * be returned consecutively
+     * @return A chatbot instance that implements the ChatBot interface
+     */
+	private static ChatBot getRandomBot(){
+        ChatBot randBot = null;
+        int rand = ThreadLocalRandom.current().nextInt(0, 3); // random int from 0 to 2 for the three bots
+
+        // To avoid having the same bot returned consecutively
+        while(lastRandBotInt == rand)
+            rand = ThreadLocalRandom.current().nextInt(0, 3);
+
+        switch (rand){
+            case 0:
+                randBot = new DoucheBot();
+                break;
+            case 1:
+                randBot = new NerdBot();
+                break;
+            case 2:
+                randBot = new WisdomBot();
+                break;
+        }
+        lastRandBotInt = rand;
+        return randBot;
+    }
 }

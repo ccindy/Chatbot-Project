@@ -1,6 +1,30 @@
+/*
+ * Magpie Project
+ * AP Computer Science
+ * Mr.Levin
+ * Daniel Roudnitsky, Cindy Wu, Candy Yuen
+ * Period 8
+ */
 
-public class physicsGame {
-	public String getGreeting()
+import java.util.Scanner;
+
+public class PhysicsGame {
+    /*
+    * Physics game
+    * the person can ask the nerdBot questions about physics and he would try to answer them.
+    */
+    public void startGame(){
+        System.out.println(getGreeting());
+
+        Scanner scanner = new Scanner(System.in);
+        String response;
+
+        while(!(response = scanner.nextLine().toLowerCase()).contains("exit")){
+            getAnswer(response);
+        }
+    }
+
+	private String getGreeting()
 	{
 		final int NUMBER_OF_GREETINGS = 1;
 		double r = Math.random();
@@ -8,12 +32,14 @@ public class physicsGame {
 		String greeting="Hello";
 		if (whichGreeting == 0)
 		{
-			greeting = "I am getting bored.. Let's play a physics game! Answer yes or no";
+			greeting = "I am getting bored.. Let's play a physics game! Answer yes or no (type exit to quit the game)";
 		}
 		return greeting;
 	}
-		public String getAnswer(String statement)
-		{
+
+    //nerdBot tries to answer the question according to these keywords
+    public String getAnswer(String statement)
+    {
 			String response = "";
 			//if 'no' and 'joke' are both detected in a statement and no comes before joke, it returns "You're a joke."
 			if (statement.indexOf("yes") >= 0)
@@ -70,6 +96,4 @@ public class physicsGame {
 
 			return response;
 	}
-
-
 }

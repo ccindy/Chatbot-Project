@@ -1,5 +1,15 @@
+/*
+ * Magpie Project
+ * AP Computer Science
+ * Mr.Levin
+ * Daniel Roudnitsky, Cindy Wu, Candy Yuen
+ * Period 8
+ */
 
-public class doucheBot {
+/**
+ * A douchey chatbot that responds with douchey remarks
+ */
+public class DoucheBot implements ChatBot{
 		/**
 		 * Get a randomized greeting 	
 		 * @return a greeting
@@ -163,7 +173,7 @@ public class doucheBot {
 		 * Pick a default response to use if nothing else fits.
 		 * @return a non-committal string
 		 */
-		private String getRandomResponse()
+		public String getRandomResponse()
 		{
 			final int NUMBER_OF_RESPONSES = 10;
 			double r = Math.random();
