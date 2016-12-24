@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class doucheBot {
 		/**
@@ -151,6 +152,19 @@ public class doucheBot {
 					||statement.indexOf("boyfriend") >= 0)
 			{
 				response = "I dated 100 girls and you will be the 101st ;)";
+			}
+			else if (statement.indexOf("game") >= 0)
+			{
+				truthOrDare tod = new truthOrDare();
+				System.out.println (tod.getGreeting());
+				Scanner in = new Scanner (System.in);
+				statement = in.nextLine();
+				while (!statement.equals("Bye"))
+				{
+					System.out.println (tod.GetDare(statement));
+					System.out.println (tod.GetTruth(statement));
+					statement = in.nextLine();
+				}
 			}
 			else
 			{

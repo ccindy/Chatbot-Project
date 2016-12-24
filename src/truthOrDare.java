@@ -1,6 +1,18 @@
 
 public class truthOrDare {
-		private String GetTruth(String statement){
+	public String getGreeting()
+	{
+		final int NUMBER_OF_GREETINGS = 1;
+		double r = Math.random();
+		int whichGreeting = (int)(r * NUMBER_OF_GREETINGS);
+		String greeting = "";
+		if (whichGreeting == 0)
+		{
+			greeting = "Welcome to truth or dare! Say 'truth' or 'dare'!!!";
+		}
+		return greeting;
+	}
+		public String GetTruth(String statement){
 			String y = "";
 			if(statement.indexOf("truth") >= 0
 				||statement.indexOf("truth") >= 0)
@@ -17,7 +29,7 @@ public class truthOrDare {
 			}
 			return y;
 		}
-		private String GetDare(String statement){ 
+		public String GetDare(String statement){ 
 			String y = "";
 			if(statement.indexOf("dare") >= 0
 					||statement.indexOf("DARE") >= 0)
