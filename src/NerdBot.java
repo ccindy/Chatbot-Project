@@ -1,49 +1,46 @@
 import java.util.Scanner;
 
 public class NerdBot {
-		/**
+		/*
 		 * Get a randomized greeting 	
 		 * @return a greeting
 		 */
-		public String getGreeting()
+		public String getGreeting() //nerdBot consists of three greetings
 		{
 			final int NUMBER_OF_GREETINGS = 3;
 			double r = Math.random();
 			int whichGreeting = (int)(r * NUMBER_OF_GREETINGS);
-			String greeting = "Hello ;)";
+			String greeting = "";
 		
 			if (whichGreeting == 0)
 			{
-				greeting = "Hello I am Daniel and I only talk about school";
+				greeting = "Hello I am Daniel and I only talk about school. If you want to play the physics game with me, say GAME!";
 			}
 			else if (whichGreeting == 1)
 			{
-				greeting = "Hello! My name is Daniel! I love Java!";
+				greeting = "Hello! My name is Daniel! I love Java! If you want to play the physics game with me, say GAME!";
 			}
 			else if (whichGreeting == 2)
 			{
-				greeting = "It's nice meeting you! How was your day?";
+				greeting = "It's nice meeting you! How was your day? If you want to play the physics game with me, say GAME!";
 			}
 			return greeting;
 		}
 		
-		/**
-		 * Gives a response to a user statement
-		 * 
-		 * @param statement
-		 *            the user statement
-		 * @return a response based on the rules given
-		 */
+/*
+ * Nerdbot gives response to the person according to these keywords
+ */
 		public String getResponse(String statement)
 		{
 			String response = "";
-			//if 'no' and 'joke' are both detected in a statement and no comes before joke, it returns "You're a joke."
+			//if 'you' and 'love' are both detected in a statement and love comes before you, it returns "I love you too"
 			if (statement.indexOf("love") != -1
 				&& statement.indexOf("you") != -1
 				&& statement.indexOf("love") < statement.indexOf("you"))
 			{ 
 			response = "I love you too";
 			}
+			//when the person is introducing himself,herself
 			if (statement.indexOf("my ") >= 0
 					&& statement.indexOf("name") >= 0
 					||statement.indexOf("I am") >= 0
@@ -51,6 +48,7 @@ public class NerdBot {
 			{
 				response = "Hey nice to meet you! What do you like?";
 			}
+			//when the person mentions 'name' without saying 'my'
 			else if (statement.indexOf("name") >= 0
 					||statement.indexOf("called") >= 0)
 			{
@@ -66,11 +64,13 @@ public class NerdBot {
 			{
 				response = "He is the best I love him <3.";
 			}
+			// when the person mention math
 			else if (statement.indexOf("math") >= 0
 					||statement.indexOf("calculus") >= 0)
 			{
 				response = "I am taking BC Calc. How about you?";
 			}
+			//when the person talks about economics terms
 			else if (statement.indexOf("gdp") >= 0
 					||statement.indexOf("econ") >= 0
 					||statement.indexOf("cpi") >= 0
@@ -79,12 +79,14 @@ public class NerdBot {
 			{
 				response = "Our nation's GDP will drop dramatically for the next four years and you know why...";
 			}
+			//when the person mention these subjects
 			else if (statement.indexOf("physics") >= 0
 					||statement.indexOf("biology") >= 0
 					||statement.indexOf("chemistry") >= 0)
 			{
 				response = "I got 800 on all my science subject test!";
 			}
+			// when the person mention 'ap'
 			else if (statement.indexOf("ap") >= 0
 					||statement.indexOf("advanced placement") >= 0)
 			{
@@ -130,14 +132,14 @@ public class NerdBot {
 			{
 				response = "Of course I got 2400 on the sat and 36 on the act!";
 			}
-			//but if joke comes first, it asks "why not?"
+			//if the person says "do you love me" or "do you love..."
 			else if (statement.indexOf("love") != -1
 				&& statement.indexOf("you") != -1
 				&& statement.indexOf("love") > statement.indexOf("you"))
 			{ 
 			response = "Yes of course!";
 			}
-			//if the statement just says "no" chatbot returns "?"
+			//if the statement just says "no" chatbot returns this response
 			else if (statement.indexOf("no") >= 0 && statement.length()==2)
 				{
 					response = "Why not? What did I do wrong?";
@@ -147,8 +149,9 @@ public class NerdBot {
 					||statement.indexOf(" no ") >= 0
 					||statement.indexOf("no ") >= 0)
 			{
-				response = "Why not? What did I do wrong?";
+				response = "Can you repeat what you just said?";
 			}
+			//when the person talks about family member
 			else if (statement.indexOf("mother") >= 0
 					|| statement.indexOf("father") >= 0
 					|| statement.indexOf("sister") >= 0
@@ -156,6 +159,7 @@ public class NerdBot {
 			{
 				response = "Can I meet your family?";
 			}
+			//when the person talks about love life
 			else if (statement.indexOf("girlfriend") >= 0
 					|| statement.indexOf("marry") >= 0
 					|| statement.indexOf("relationship") >= 0
@@ -163,6 +167,7 @@ public class NerdBot {
 			{
 				response = "Marry me. <3 <3 <3";
 			}
+			//when the person talks about emotion
 			else if (statement.indexOf("sad") >= 0
 					|| statement.indexOf("stressed") >= 0
 					|| statement.indexOf("happy")>= 0
@@ -175,20 +180,17 @@ public class NerdBot {
 			}
 			else if (statement.indexOf("because") >= 0)
 			{
-				response = "Oh. You wanna send me a selfie?";
+				response = "Everything has a reason behind it. I understand";
 			}
 			else if (statement.indexOf("bye") >= 0)
 			{
-				response = "What did I do wrong? I can do anthing for you";
-			}
-			else if (statement.indexOf("you") >= 0)
-			{
-				response = "Me?";
+				response = "What did I do wrong? Please don't go!";
 			}
 			else if (statement.indexOf("college") >= 0)
 			{
 				response = "My dream college is MIT. Carnegie Mellon has a really good comp sci program too!";
 			}
+			//nerdBot knows how to tell one joke only
 			else if (statement.indexOf("joke") >= 0)
 			{
 				response = "Joke? I can tell you some!"
@@ -211,6 +213,28 @@ public class NerdBot {
 			{
 				response = "I love Brooklyn Tech. I love going to Computer science class.";
 			}
+			//when the person asks 'where are you from' or 'where were you born'
+			else if (statement.indexOf("where") != -1
+					&& statement.indexOf("born") != -1
+					||statement.indexOf("from") != -1
+					&& statement.indexOf("born") > statement.indexOf("where")
+					||statement.indexOf("from") > statement.indexOf("where"))
+			{
+				response = "I was born in the U.S";
+			}
+			// when the person mentions game, the nerdBot would jump to physicsGame mode
+			else if (statement.indexOf("game") >= 0)
+			{
+				physicsGame physics = new physicsGame();
+				System.out.println (physics.getGreeting());
+				Scanner in = new Scanner (System.in);
+				statement = in.nextLine();
+				while (!statement.equals("Bye"))
+				{
+					System.out.println (physics.getAnswer(statement));
+					statement = in.nextLine();
+				}
+			}
 			else
 			{
 				response = getRandomResponse(statement);
@@ -218,9 +242,9 @@ public class NerdBot {
 			return response;
 		}
 
-		/**
+		/*
 		 * Pick a default response to use if nothing else fits.
-		 * @return a non-committal string
+		 * There are 8 random responses
 		 */
 		private String getRandomResponse(String statement)
 		{

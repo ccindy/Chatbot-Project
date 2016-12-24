@@ -1,4 +1,10 @@
 import java.util.Scanner;
+/*
+ * AP Computer Science
+ * Mr.Levin
+ * Daniel Roudnitsky, Cindy Wu, Candy Yuen
+ * Period 8
+ */
 public class ChatbotRunner
 {
 	public static void main(String[] args)
@@ -23,34 +29,15 @@ public class ChatbotRunner
 		}
 		else if(number == 2)
 		{
-			while(true)
-			{
 				NerdBot nerd = new NerdBot();
 				System.out.println (nerd.getGreeting());
 				Scanner in = new Scanner (System.in);
 				String statement = in.nextLine();
-				int numofresponse = 0;
-				int count=0;
 			
 			while (!statement.equals("Bye"))
 			{
 				System.out.println (nerd.getResponse(statement));
 				statement = in.nextLine();
-				numofresponse++;
-				while(numofresponse>10 && count<1 || statement.equals("game"))
-				{
-				physicsGame game = new physicsGame();
-				System.out.println (game.getGreeting());
-				Scanner question = new Scanner(System.in);
-				String say = question.nextLine();
-				while(!statement.equals("no"))
-				{
-				System.out.println (game.getAnswer(say));
-				say = question.nextLine();
-				count++;
-				}
-				}
-			}
 			}
 		}
 		else{
