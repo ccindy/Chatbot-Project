@@ -19,7 +19,7 @@ public class DoucheBot implements ChatBot{
 			final int NUMBER_OF_GREETINGS = 3;
 			double r = Math.random();
 			int whichGreeting = (int)(r * NUMBER_OF_GREETINGS);
-			String greeting = "Ayyee gurl ;)";
+			String greeting = "";
 		
 			if (whichGreeting == 0)
 			{
@@ -33,7 +33,8 @@ public class DoucheBot implements ChatBot{
 			{
 				greeting = "aye gurl u tryna hook up?";
 			}
-			return greeting;
+            System.out.println("(You can ask me for truths or dares)");
+            return greeting;
 		}
 		
 		/**
@@ -162,6 +163,26 @@ public class DoucheBot implements ChatBot{
 			{
 				response = "I dated 100 girls and you will be the 101st ;)";
 			}
+			else if(statement.indexOf("truth") >= 0){
+                String[] truths = {"Did you ever break the law?",
+                                   "What's the worst lie you've told?",
+                        			"You like someone,right? 😉",
+                        			"Tell me the most embarassing thing you've ever done.",
+                        			"I bet you've cheated on a test before, right?"};
+                double r = Math.random();
+                int index = (int)(r * truths.length);
+                return truths[index];
+            }
+            else if(statement.indexOf("dare") >= 0){
+                String[] dares = {"Lick the person next to you 😛",
+                				 "Go outside and yell 'I AM LOOKING FOR A GOD'",
+                				 "Challenge a stranger to a duel.",
+                				 "Scream Twinkle Twinkle Little Stars out the window 😀",
+                				 "LICK THE WALL"};
+                	 double r = Math.random();
+                	 int index = (int)(r * dares.length);
+                	 return dares[index];
+            }
 			else
 			{
 				response = getRandomResponse();

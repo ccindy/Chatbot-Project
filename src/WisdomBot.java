@@ -27,12 +27,12 @@ public class WisdomBot implements ChatBot{
         {{"good", "bad", "horrible", "great"}, {"The good life is one inspired by love and guided by knowledge."}},
         // !!! NSFW !!! (Sorry Mr. Levin)
         {{"fuck", "penis", "bitch", "ass", "anus"}, {"Cursing is invoking the assistance of a spirit to help you inflict suffering." +
-                                                             "Swearing on the other hand, is invoking, only the witness of a spirit to an " +
-                                                             "statement you wish to make."}},
+                                                     "Swearing on the other hand, is invoking, only the witness of a spirit to an " +
+                                                     "statement you wish to make."}},
         {{"what"},{"what?"}},
         {{"dont know"}, {"Me neither and I am wise"}},
         {{"why?", "why"}, {"Why does anything exist? What is the meaning of it all?"}},
-        {{"bye", "goodbye", "peace"}, {"Bye! It was nice giving you wisdom!"}}
+        {{"bye", "peace"}, {"Bye! It was nice giving you wisdom!"}}
     };
     private String[] randomResponses = {
             "The good life is one inspired by love and guided by knowledge.",
@@ -54,10 +54,9 @@ public class WisdomBot implements ChatBot{
                 return "Repetition makes reputation and reputation makes customers";
         lastInput = input;
 
-        for(String[][] pair: responsePairs)
+        for(String[][] pair: responsePairs) // check for the input in responsePairs
             for(String s: pair[0])
                 if (input.contains(s)) return pair[1][0];
-
 
         return getRandomResponse();
     }

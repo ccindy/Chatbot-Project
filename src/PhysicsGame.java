@@ -20,7 +20,7 @@ public class PhysicsGame {
         String response;
 
         while(!(response = scanner.nextLine().toLowerCase()).contains("exit")){
-            getAnswer(response);
+            System.out.println(getAnswer(response));
         }
     }
 
@@ -32,7 +32,7 @@ public class PhysicsGame {
 		String greeting="Hello";
 		if (whichGreeting == 0)
 		{
-			greeting = "I am getting bored.. Let's play a physics game! Answer yes or no (type exit to quit the game)";
+			greeting = "You want to play the physics game? Answer yes or no (type exit to quit the game)";
 		}
 		return greeting;
 	}

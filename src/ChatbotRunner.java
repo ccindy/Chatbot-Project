@@ -34,7 +34,8 @@ public class ChatbotRunner
                 System.out.println(randBot.getResponse(response));
             }
         }
-	}
+        System.out.println(randBot.getResponse("bye")); // Get a proper farewell
+    }
 
     /**
      * Method to create a new chat bot based on a random number, doesn't allow for the same type of bot to
@@ -48,6 +49,7 @@ public class ChatbotRunner
         // To avoid having the same bot returned consecutively
         while(lastRandBotInt == rand)
             rand = ThreadLocalRandom.current().nextInt(0, 3);
+        lastRandBotInt = rand; // update lastRandBotInt
 
         switch (rand){
             case 0:
@@ -60,7 +62,7 @@ public class ChatbotRunner
                 randBot = new WisdomBot();
                 break;
         }
-        lastRandBotInt = rand;
+
         return randBot;
     }
 }
